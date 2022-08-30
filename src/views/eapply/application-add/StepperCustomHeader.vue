@@ -84,11 +84,9 @@
     <v-stepper-items>
       <!-- Stepper Content: Step 1 -->
       <v-stepper-content step="1">
-        <v-card
-          class="mb-8"
-          color="secondary"
-          height="200px"
-        ></v-card>
+        <div class="mt-10 mb-10">
+          <form-layout-multiple-column></form-layout-multiple-column>
+        </div>
 
         <div class="d-flex justify-end">
           <v-btn
@@ -104,7 +102,6 @@
       <v-stepper-content step="2">
         <v-card
           class="mb-8"
-          color="secondary"
           height="200px"
         ></v-card>
 
@@ -199,7 +196,10 @@
 </template>
 
 <script>
+import FormLayoutMultipleColumn from './FormLayoutMultipleColumn.vue'
+
 export default {
+  components: { FormLayoutMultipleColumn },
   data() {
     return {
       activeStep: 1,
