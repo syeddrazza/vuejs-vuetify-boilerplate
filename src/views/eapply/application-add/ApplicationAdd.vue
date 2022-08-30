@@ -1,22 +1,6 @@
 <template>
   <!-- style="background-color:#f4f5fa" -->
-  <!-- <app-card>
 
-    <app-card-header>
-      Lets get Started!
-    </app-card-header>
-    <app-card-body>
-      <div>
-        <stepper-custom-header></stepper-custom-header>
-        <stepper-transparent-header></stepper-transparent-header>
-      </div>
-    </app-card-body>
-  </app-card> -->
-  <!-- <div>
-    <v-row>
-
-    </v-row>
-  </div> -->
   <div>
     <v-card>
       <v-img src="@/assets/images/pages/header-card-banner-main-en.png"></v-img>
@@ -37,14 +21,15 @@
       </v-card-text>
     </v-card>
     <br />
-    <v-card>
+    <stepper-custom-header></stepper-custom-header>
+    <!-- <v-card>
       <v-card-title>Lets get Started!</v-card-title>
       <v-card-text>
         <div>
-          <stepper-custom-header></stepper-custom-header>
+
         </div>
       </v-card-text>
-    </v-card>
+    </v-card> -->
   </div>
 
   <!--  -->
