@@ -3,23 +3,6 @@
     :class="[{'nav-drawer-mini': menuIsVerticalNavMini}, {'content-full': appContentWidth === 'full'}]"
     class="content-layout vertical-nav"
   >
-    <v-navigation-drawer
-      v-if="!menuIsMenuHidden"
-      ref="layoutDrawer"
-      v-model="isVerticalNavMenuActive"
-      app
-      :right="$vuetify.rtl"
-      mini-variant-width="68"
-      :expand-on-hover="menuIsVerticalNavMini"
-      width="260"
-      class="app-navigation-menu"
-    >
-      <vertical-nav-menu
-        :nav-menu-items="navMenuItems"
-        @close-nav-menu="isVerticalNavMenuActive = false"
-      />
-    </v-navigation-drawer>
-
     <!-- TODO: All elevations are to bottom and footer requires shadow on top -->
     <v-app-bar
       v-if="appBarType !== 'hidden'"
@@ -30,7 +13,8 @@
       :elevate-on-scroll="appBarType !== 'static'"
       :elevation="appBarType !== 'static' ? $vuetify.theme.isDark ? 4: 3 : 0"
       class="mx-auto app-bar-static"
-      :class="[{ 'px-5 app-bar-shinked': appBarType === 'fixed' && scrollY }, { 'bg-blur': appBarIsBlurred && appBarType === 'fixed' && scrollY }]"
+      :class="[{ 'px-5 app-bar-shinked': appBarType === 'fixed' && scrollY },
+               { 'bg-blur': appBarIsBlurred && appBarType === 'fixed' && scrollY }]"
     >
       <slot
         name="navbar"
@@ -73,11 +57,11 @@
 </template>
 
 <script>
-import { ref, watch } from '@vue/composition-api'
-import AppContentContainer from '@core/layouts/components/app-content-container/AppContentContainer.vue'
 import { getVuetify } from '@/@core/utils'
 import useAppConfig from '@core/@app-config/useAppConfig'
+import AppContentContainer from '@core/layouts/components/app-content-container/AppContentContainer.vue'
 import VerticalNavMenu from '@core/layouts/components/vertical-nav-menu/VerticalNavMenu.vue'
+import { ref, watch } from '@vue/composition-api'
 import { useWindowScroll } from '@vueuse/core'
 
 export default {

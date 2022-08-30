@@ -2,15 +2,34 @@
   <layout-content-vertical-nav :nav-menu-items="navMenuItems">
     <slot></slot>
 
-    <!-- Slot: Navbar -->
-    <template #navbar="{ isVerticalNavMenuActive, toggleVerticalNavMenuActive }">
+    <!-- Slot: Navbar { isVerticalNavMenuActive, toggleVerticalNavMenuActive }-->
+    <template #navbar="">
       <div
         class="navbar-content-container"
         :class="{'expanded-search': shallShowFullSearch}"
       >
         <!-- Left Content: Search -->
         <div class="d-flex align-center">
-          <v-icon
+          <router-link
+            to="/"
+            class="d-flex align-center text-decoration-none"
+          >
+            <v-img
+              :src="appLogo"
+              max-height="30px"
+              max-width="30px"
+              alt="logo"
+              contain
+              eager
+              class="app-logo me-3"
+            ></v-img>
+            <h2
+              class="app-title text--primary"
+            >
+              {{ appName }}
+            </h2>
+          </router-link>
+          <!-- <v-icon
             v-if="$vuetify.breakpoint.mdAndDown"
             class="me-3"
             @click="toggleVerticalNavMenuActive"
@@ -23,14 +42,13 @@
             :filter="searchFilterFunc"
             :search-query.sync="appBarSearchQuery"
             @update:shallShowFullSearch="handleShallShowFullSearchUpdate(isVerticalNavMenuActive, toggleVerticalNavMenuActive)"
-          ></app-bar-search>
+          ></app-bar-search> -->
         </div>
 
         <!-- Right Content: I18n, Light/Dark, Notification & User Dropdown -->
         <div class="d-flex align-center right-row">
           <app-bar-i18n></app-bar-i18n>
           <app-bar-theme-switcher class="mx-4"></app-bar-theme-switcher>
-          <app-bar-notification></app-bar-notification>
           <app-bar-user-menu></app-bar-user-menu>
         </div>
       </div>
@@ -40,9 +58,10 @@
     <template #footer>
       <div class="d-flex justify-space-between">
         <span>COPYRIGHT &copy; {{ new Date().getFullYear() }} <a
-          href="https://rexolv.com"
+          :href="footerLink"
+          target="_blank"
           class="text-decoration-none"
-        >Rexolv</a><span class="d-none d-md-inline">, All rights Reserved</span></span>
+        >{{ footerTitle }}</a><span class="d-none d-md-inline">, All rights Reserved</span></span>
       </div>
     </template>
 
@@ -63,6 +82,7 @@ import { getVuetify } from '@core/utils'
 
 // Search Data
 import appBarSearchData from '@/assets/app-bar-search-data'
+import themeConfig from '@themeConfig'
 import { ref, watch } from '@vue/composition-api'
 
 import LayoutContentVerticalNav from '@/@core/layouts/variants/content/vertical-nav/LayoutContentVerticalNav.vue'
@@ -136,6 +156,10 @@ export default {
       appBarSearchData,
       searchFilterFunc,
 
+      appName: themeConfig.app.name,
+      appLogo: themeConfig.app.logo,
+      footerTitle: themeConfig.footer.title,
+      footerLink: themeConfig.footer.link,
       icons: {
         mdiMenu,
         mdiHeartOutline,

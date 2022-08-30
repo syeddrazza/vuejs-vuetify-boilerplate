@@ -56,6 +56,18 @@ const apps = [
       layout: 'content',
     },
   },
+
+  //
+  //* ——— E-Apply ——————————————————
+  //
+  {
+    path: '/eapply/online',
+    name: 'application-add',
+    component: () => import('@/views/eapply/application-add/ApplicationAdd.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default apps

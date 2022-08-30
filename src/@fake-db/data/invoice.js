@@ -32,7 +32,7 @@ const data = [
     },
     service: 'UI/UX Design & Development',
     total: 5219,
-    avatar: '1.png',
+    avatar: '13.png',
     invoiceStatus: 'Downloaded',
     balance: 0,
     dueDate: '2019-12-15',

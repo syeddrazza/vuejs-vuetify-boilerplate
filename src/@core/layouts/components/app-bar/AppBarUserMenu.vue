@@ -55,7 +55,7 @@
           >
             <v-img
               v-if="userData.avatar"
-              src="@/assets/images/avatars/1.png"
+              src="@/assets/images/avatars/13.png"
             ></v-img>
             <v-icon
               v-else

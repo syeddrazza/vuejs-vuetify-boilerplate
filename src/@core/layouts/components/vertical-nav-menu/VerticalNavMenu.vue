@@ -37,19 +37,19 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { ref, provide } from '@vue/composition-api'
+import { provide, ref } from '@vue/composition-api'
 
 // SFCs
-import VerticalNavMenuHeader from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-header/VerticalNavMenuHeader.vue'
-import VerticalNavMenuSectionTitle from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-section-title/VerticalNavMenuSectionTitle.vue'
 import VerticalNavMenuGroup from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-group/VerticalNavMenuGroup.vue'
+import VerticalNavMenuHeader from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-header/VerticalNavMenuHeader.vue'
 import VerticalNavMenuLink from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-link/VerticalNavMenuLink.vue'
+import VerticalNavMenuSectionTitle from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-section-title/VerticalNavMenuSectionTitle.vue'
 
 // Composable
 import useVerticalNavMenu from '@/@core/layouts/composable/vertical-nav/useVerticalNavMenu'
+import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 
 // 3rd Party
-import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 
 export default {
   components: {
@@ -152,11 +152,11 @@ export default {
 
 @include theme--child(vertical-nav-menu-container) using ($material) {
   .shadow-bottom {
-    background: linear-gradient(
-      map-deep-get($material, 'background') 40%,
-      rgba(map-deep-get($material, 'background'), 0.1) 95%,
-      rgba(map-deep-get($material, 'background'), 0.05)
-    );
+    // background: linear-gradient(
+    //   map-deep-get($material, 'background') 40%,
+    //   rgba(map-deep-get($material, 'background'), 0.1) 95%,
+    //   rgba(map-deep-get($material, 'background'), 0.05)
+    // );
     margin-top: -0.5rem;
     filter: blur(4px);
   }

@@ -264,6 +264,7 @@ export default {
             // We will store `userAbility` in localStorage separate from userData
             // Hence, we are just removing it from user object
             delete user.ability
+            console.log(user)
 
             // Set user's data in localStorage for UI/Other purpose
             localStorage.setItem('userData', JSON.stringify(user))

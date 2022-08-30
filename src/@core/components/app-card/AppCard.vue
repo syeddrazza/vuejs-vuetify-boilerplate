@@ -11,7 +11,7 @@ export default {
   },
 }
 </script>
-
+<!-- #f4f5fa -->
 <style lang="scss">
 $app-card-spacer: 28px;
 $app-card-content-spacer: 20px;

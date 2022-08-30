@@ -16,7 +16,7 @@ const routes = [
       const userData = JSON.parse(localStorage.getItem('userData'))
       const userRole = userData && userData.role ? userData.role : null
 
-      if (userRole === 'admin') return { name: 'user-list' }
+      if (userRole === 'admin') return { name: 'application-add' }
 
       // if (userRole === 'client') return { name: 'page-access-control' }
 

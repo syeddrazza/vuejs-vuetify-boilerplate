@@ -2,8 +2,8 @@ import { mdiCheckboxBlankCircleOutline } from '@mdi/js'
 
 const themeConfig = {
   app: {
-    name: 'REXOLV',
-    logo: require('@/assets/images/svg/rexolv.svg'),
+    name: 'American Express Saudi Arabia – Online Application',
+    logo: require('@/assets/images/logos/logo-amex.png'),
     isDark: false,
     isRtl: false,
     contentLayoutNav: 'vertical', // vertical, horizontal
@@ -29,6 +29,8 @@ const themeConfig = {
   },
   footer: {
     type: 'static', // fixed, static, hidden
+    title: 'American Express Company',
+    link: 'https://www.americanexpress.com.sa/',
   },
   themes: {
     light: {
